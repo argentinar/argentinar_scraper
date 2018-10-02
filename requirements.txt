@@ -1,0 +1,12 @@
+beautifulsoup4==4.6.3
+certifi==2018.8.24
+chardet==3.0.4
+feedparser==5.2.1
+idna==2.7
+lxml==4.2.4
+ordereddict==1.1
+pytest-runner==4.2
+python-dotenv==0.9.1
+python-wordpress-xmlrpc==2.3
+requests==2.19.1
+urllib3==1.23
