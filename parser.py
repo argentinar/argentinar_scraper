@@ -72,10 +72,11 @@ for b in blogs:
                 print(summary)
                 image_url = None
                 img_attachment = None
-                for m in e.media_content:
-                    if m['medium'] == 'image':
-                        image_url = m['url']
-                        break
+                if hasattr(e, 'media_content'):
+                    for m in e.media_content:
+                        if m['medium'] == 'image':
+                            image_url = m['url']
+                            break
 
                 if image_url:
                     try:
