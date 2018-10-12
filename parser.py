@@ -86,7 +86,7 @@ for b in blogs:
                     post.content = """
                     <p><i>Este post fue publicado originalmente en <a href="%s">%s</a> por %s</i></p>
                     %s""" % (link, blog_name, author_string, content)
-                    post.post_status = 'publish'
+                    post.post_status = 'draft'
                     post.excerpt = summary
                     post.terms_names = {
                       'post_tag': ['r', 'contribucion'],
