@@ -60,7 +60,10 @@ for b in blogs:
                 published = e.published
                 summary = e.summary
                 title = e.title
-                content = e.content[0].value
+                if e.content:
+                    content = e.content[0].value
+                elif e.description:
+                    content = e.description[0].value
 
                 print ("Scraped %s, uploading to wp..." % link)
                 print(title)
