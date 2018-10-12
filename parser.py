@@ -27,7 +27,7 @@ for b in blogs:
         blog_name = b['name']
         feed_url = b['feed_url']
         tags_search = b['tags_search']
-        if tags_search = '':
+        if tags_search == '':
             tags_search = None
         else:
             tags_search = set(tags_search)
