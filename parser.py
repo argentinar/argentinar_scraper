@@ -63,7 +63,7 @@ for b in blogs:
                 if hasattr(e,'content'):
                     content = e.content[0].value
                 elif hasattr(e,'description'):
-                    content = e.description[0].value
+                    content = e.description
                 else:
                     raise ValueError("Content not found")
 
