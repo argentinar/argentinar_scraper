@@ -35,8 +35,6 @@ for b in blogs:
     d = feedparser.parse(feed_url)
     entries = d['entries']
 
-    blog_id = 'dsh'
-    blog_name = "Data Science Heroes"
     for e in entries:
         match = False
         if tags_search is None:
