@@ -58,18 +58,22 @@ for b in blogs:
                     author_string = e.author
                 link = e.link
                 published = e.published
-                summary = e.summary
                 title = e.title
+
                 if hasattr(e,'content'):
                     content = e.content[0].value
+                    summary = e.summary
                 elif hasattr(e,'description'):
                     content = e.description
+                    summary = ''
                 else:
                     raise ValueError("Content not found")
 
                 print ("Scraped %s, uploading to wp..." % link)
                 print(title)
                 print(summary)
+                if len(summary) > 500:
+                    summary = summary[:500] + '...'
                 image_url = None
                 img_attachment = None
                 if hasattr(e, 'media_content'):
