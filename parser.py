@@ -27,9 +27,12 @@ for b in blogs:
         blog_name = b['name']
         feed_url = b['feed_url']
         tags_search = b['tags_search']
+        if tags_search = '':
+            tags_search = None
+        else:
+            tags_search = set(tags_search)
 
         d = feedparser.parse(feed_url)
-        tags_search = set(['r-esp'])
         entries = d['entries']
 
         blog_id = 'dsh'
@@ -37,7 +40,12 @@ for b in blogs:
         for e in entries:
             match = False
             tags = set([x.term for x in e.tags])
-            match = len(tags & tags_search) > 0
+            if tags_search is None:
+                #If no tags, match all
+                match = 1
+            else:
+                match = len(tags & tags_search) > 0
+
 
             if match:
                 post_id = e.id
