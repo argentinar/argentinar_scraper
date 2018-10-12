@@ -39,11 +39,11 @@ for b in blogs:
         blog_name = "Data Science Heroes"
         for e in entries:
             match = False
-            tags = set([x.term for x in e.tags])
             if tags_search is None:
                 #If no tags, match all
                 match = 1
             else:
+                tags = set([x.term for x in e.tags])
                 match = len(tags & tags_search) > 0
 
 
