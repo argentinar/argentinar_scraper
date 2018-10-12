@@ -60,10 +60,12 @@ for b in blogs:
                 published = e.published
                 summary = e.summary
                 title = e.title
-                if e.content:
+                if hasattr(e,'content'):
                     content = e.content[0].value
-                elif e.description:
+                elif hasattr(e,'description'):
                     content = e.description[0].value
+                else:
+                    raise ValueError("Content not found")
 
                 print ("Scraped %s, uploading to wp..." % link)
                 print(title)
