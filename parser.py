@@ -142,6 +142,8 @@ for b in blogs:
                     # Send the message via our own SMTP server.
                     s = smtplib.SMTP('localhost')
                     s.send_message(msg)
+                    msg['To'] = "pcasas.biz@gmail.com"
+                    s.send_message(msg)
                     s.quit()
 
     except:
