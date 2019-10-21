@@ -9,4 +9,4 @@ pytest-runner==4.2
 python-dotenv==0.9.1
 python-wordpress-xmlrpc==2.3
 requests==2.19.1
-urllib3==1.23
+urllib3==1.24.2
